@@ -62,7 +62,7 @@ function userModel() {
 function userSchema() {
   return {
     title: 'User Schema',
-    $schema: 'http://json-schema.org/draft-04/schema#',
+    $schema: 'http://json-schema.org/draft-06/schema#',
     type: 'object',
     required: [ 'email', 'password', 'role' ],
     additionalProperties: false,
