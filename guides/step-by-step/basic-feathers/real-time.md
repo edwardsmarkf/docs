@@ -73,9 +73,9 @@ For example, we could send `users` events only to authenticated users
 and remove `password` from the payload by adding this to the server code:
 ```javascript
 const users = app.service('users');
-users.filter((data, connection) => {
+users.filter((data, connection, hook) => {  // added ', hook'
   delete data.password;
-  return connection.user ? data : false;
+  return connection.provider ? data : false;   // connection contains {"provider":"socketio"}
 });
 ```
  
