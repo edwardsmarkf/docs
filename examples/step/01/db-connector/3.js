@@ -34,10 +34,9 @@ function services() {
 }
 
 function databaseConnect() {
-  const sequelize = new Sequelize('postgres://postgres:@localhost:5432/feathers', {
-    dialect: 'postgres',
-    logging: false
-  });
+  const sequelize = new Sequelize( 'Users', 'Mark', 'iLoveFeathers'
+                  , { host: '###.###.###.###', port: 3306, dialect : 'mariadb' }
+);
   return sequelize;
   // app isn't defined at that moment
   //app.set('sequelize', sequelize);
